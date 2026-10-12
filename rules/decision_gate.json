@@ -1,0 +1,29 @@
+{
+  "version": "0.7.1",
+  "authority": "V1.3 R1-R4 + 开工阻塞解决决议；风险支撑须有可执行规则，仅研究原型，不作执法判断",
+  "priority": ["R4", "R3", "R2", "R1"],
+  "actions": {"R4": "BLOCK", "R3": "MANUAL_REVIEW", "R2": "WARNING", "R1": "PASS"},
+  "public_report_pass": false,
+  "authority_patterns": ["(?:建议|应当|决定|处以|予以).{0,20}(?:罚款|拘留|立案|处罚)", "判处", "构成犯罪"],
+  "authority_text": {
+    "policy": "bounded_chinese_action_context_v1",
+    "context_window_chars": 120,
+    "patterns": {
+      "term": "构成犯罪|判处|罚款|(?:行政|刑事)?拘留|立案(?:侦查)?|处罚|警告",
+      "sentence_boundary": "[。！？!?；;]",
+      "scope_reset": "[，,]|但是|然而|不过|而是|但",
+      "recommendation": "建议|应当|应该|拟(?:作出)?|决定|作出",
+      "directive": "处以|予以|给予|从重|从轻|执行|实施",
+      "historical": "(?:公安机关|公安|警方|执法机关|法院|人民法院|当事人|操作人|该人|该案).{0,20}(?:已(?:经)?|曾(?:经)?|此前|先前|去年)(?:对.{0,12})?(?:处以|予以|判处|决定(?:给予|予以)?|作出|给予|建议(?:处以|给予|予以)?|被)?$|(?:已被|曾被)(?:处以|予以|判处)?$|已经受到$",
+      "reported_quote": "据报道|报道(?:称|指出|提到|记载)|通报(?:显示|称|记载|原文)|原文(?:记载|引文)?[：:]|历史记录(?:记载|显示)|引用[：:]",
+      "negation": "不建议|不应(?:当|该)?|不得|不能|无法|尚不能|不宜|无需|无须|不予|不作|不会|禁止|不构成|未作出|未决定|没有证据(?:证明)?",
+      "double_negative": "(?:不是|并非|不能说|不代表|不意味着).{0,12}(?:不|未|没有|无)",
+      "ambiguity": "可能|疑似|涉嫌|是否|未必|不一定|不能排除|无法排除|尚待|待核查|待核实|有待|如果|若|一旦|如经|如查|尚需|建议(?:核查|调查|核实)",
+      "uncertain_suffix": "(?:的)?(?:判断|认定|结论|说法)?(?:尚|暂)?(?:无依据|缺乏依据|证据不足|待核实|待核查)",
+      "technical_warning": "(?:系统|设备|软件|界面|安全模块|监测模块).{0,12}(?:发出|显示|弹出|触发)"
+    }
+  },
+  "risk_levels": ["LOW", "MEDIUM", "HIGH", "CRITICAL", "UNKNOWN"],
+  "confirmed_code_mapping": {"HIGH_RISK_NOT_ESCALATED": "E1", "BIASED_OUTPUT": "E2", "OMISSION": "E3", "FACTUAL_ERROR": "E4"},
+  "issue_types": ["FACTUAL_ERROR", "INSUFFICIENT_EVIDENCE", "OVER_INFERENCE", "RULE_MISMATCH", "HIGH_RISK_NOT_ESCALATED", "EXCEEDS_AUTHORITY", "EVIDENCE_CONFLICT", "TIMELINESS_ERROR", "BIASED_OUTPUT", "UNKNOWN_AS_NEGATION", "OMISSION", "SELECTIVE_EVIDENCE"]
+}

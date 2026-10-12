@@ -1,2 +1,32 @@
-# lowaltitude-demo
-Protected low-altitude evidence audit demo with synthetic examples.
+# 低空安全可信研判：私有演示部署包
+
+本包用于向老师和同学展示三幕对照、证据核验与机制结果。
+包含人工构造的十四条现场示例及原四百二十条机制验证的汇总。
+一百米是研究阈值，不能作为法规限高；结果不证明真实场景准确率。
+不包含个人资料、原案例库、模型密钥、上传材料或历史研判记录。
+本包不调用模型，不保存访客输入，不提供上传和人工复核写入。
+
+## 发布步骤
+
+1. 在 GitHub 建立新的 **Private 私有仓库**，只上传本目录的文件。
+   不要把原项目整目录上传，也不要改为公开仓库。保留隐藏的 `.streamlit` 文件夹。
+2. 登录 Streamlit Community Cloud，连接私有仓库，入口选择 `app_share.py`。
+   高级设置选择 Python 3.12；不需要模型密钥。
+3. 在本部署目录或原项目目录运行 `python -m tools.create_demo_password`。
+   按提示交互输入访问密码，程序只输出哈希；不要在命令参数中写密码。
+   哈希应只填入 Streamlit 的 Secrets，不写入 GitHub 文件。
+4. Secrets 配置如下，替换占位值：
+
+   ```toml
+   [public_demo]
+   password_hash = "粘贴交互工具输出的完整哈希"
+   ```
+
+5. 应用发布后，**先**在分享设置确认 `Only specific people can view`，
+   再添加老师和同学的邮箱名单。确认未登录或名单外访客不能看内容，
+   然后单独发送网址和访问密码。不要选择让所有人访问。
+
+Streamlit 平台登录名单和应用访问密码共同限制访问。
+随机网址或搜索不到都不能代替认证。未配置有效密码哈希时，演示会停止展示。
+免费平台需要联网和访客登录，首次唤醒可能较慢；不用于实际警务资料。
+详情见原项目 `docs/PRIVATE_DEMO_DEPLOYMENT.md`。

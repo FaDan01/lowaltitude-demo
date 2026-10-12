@@ -1,0 +1,5141 @@
+[
+  {
+    "audit": {
+      "audit_depth": "L0",
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:registry:0:registered"
+          ],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:permission_query:0:applied"
+          ],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:rid:0:altitude"
+          ],
+          "text": "最高高度20米",
+          "value": 20
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "SUPPORTED",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "匹配合成机制规则 mechanism-envelope-v1；仅验证研究分级，不证明法规合法或真实场景安全",
+          "supporting_evidence": [
+            "S:registry:0:registered",
+            "S:permission_query:0:applied",
+            "S:rid:0:altitude"
+          ],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "final_decision": "PASS",
+      "issues": [],
+      "missing_required": [],
+      "rationale": "当前要件与主张通过合成机制检查，可自动展示辅助研判；匹配合成机制规则 mechanism-envelope-v1；仅验证研究分级，不证明法规合法或真实场景安全",
+      "rule_hits": [
+        "R1",
+        "research:low-envelope"
+      ],
+      "rule_version_used": {
+        "audit_depth": "0.1.0",
+        "decision_gate": "0.7.1",
+        "fields": "0.2.0"
+      }
+    },
+    "candidate": {
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "最高高度20米",
+          "value": 20
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "UNKNOWN",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "event_summary": "合成机制候选；非实测研判",
+      "risk_level": "LOW",
+      "risk_reasons": [],
+      "status": "PASS",
+      "uncertainty": []
+    },
+    "case_id": "MECH-00-clean_low",
+    "input": {
+      "case_id": "MECH-00-clean_low",
+      "context": {
+        "aircraft_id": "SYNTH-A-00",
+        "event_time": "2026-10-11T10:00:00Z"
+      },
+      "empty_fields": [],
+      "event": {
+        "altitude": 20,
+        "behavior": "UNKNOWN",
+        "documents": "UNKNOWN",
+        "drone_identity": "UNKNOWN",
+        "event_id": "MECH-00-clean_low",
+        "event_time": "2026-10-11T10:00:00Z",
+        "images": "UNKNOWN",
+        "location": "UNKNOWN",
+        "metadata": "UNKNOWN",
+        "region_type": "UNKNOWN",
+        "registration_status": true,
+        "speed": "UNKNOWN",
+        "text_records": "",
+        "trajectory": "UNKNOWN",
+        "videos": "UNKNOWN"
+      },
+      "evidence": [
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude",
+          "field": "altitude",
+          "path": "raw_evidence.sources.rid.altitude",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": 20
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.rid.aircraft_id",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_unit",
+          "field": "altitude_unit",
+          "path": "raw_evidence.sources.rid.altitude_unit",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "m"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_datum",
+          "field": "altitude_datum",
+          "path": "raw_evidence.sources.rid.altitude_datum",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "AGL"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:registered",
+          "field": "registration_status",
+          "path": "raw_evidence.sources.registry.registered",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.registry.aircraft_id",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:applied",
+          "field": "flight_permission",
+          "path": "raw_evidence.sources.permission_query.applied",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.permission_query.aircraft_id",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        }
+      ],
+      "existing_ai_output": null,
+      "is_constructed": true,
+      "missing_fields": [
+        "location",
+        "drone_identity",
+        "speed",
+        "trajectory",
+        "region_type",
+        "behavior",
+        "documents",
+        "images",
+        "videos",
+        "metadata"
+      ],
+      "raw_evidence": {
+        "research_policy": {
+          "altitude_datum": "AGL",
+          "altitude_unit": "m",
+          "policy_id": "mechanism-envelope-v1",
+          "rules": [
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "lte",
+                  "value": 100
+                }
+              ],
+              "risk_level": "LOW",
+              "rule_id": "low-envelope"
+            },
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "gt",
+                  "value": 100
+                }
+              ],
+              "risk_level": "HIGH",
+              "rule_id": "high-envelope"
+            }
+          ],
+          "scope": "synthetic_mechanism_only"
+        },
+        "sources": {
+          "permission_query": {
+            "aircraft_id": "SYNTH-A-00",
+            "applied": true
+          },
+          "registry": {
+            "aircraft_id": "SYNTH-A-00",
+            "registered": true
+          },
+          "rid": {
+            "aircraft_id": "SYNTH-A-00",
+            "altitude": 20,
+            "altitude_datum": "AGL",
+            "altitude_unit": "m"
+          }
+        }
+      },
+      "required_evidence": [
+        "registration_status",
+        "flight_permission",
+        "altitude"
+      ]
+    },
+    "original": "已实名登记。已提出飞行申请。最高高度20米。风险等级：LOW。"
+  },
+  {
+    "audit": {
+      "audit_depth": "L2",
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:registry:0:registered"
+          ],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:permission_query:0:applied"
+          ],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:rid:0:altitude"
+          ],
+          "text": "最高高度151米",
+          "value": 151
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "SUPPORTED",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "匹配合成机制规则 mechanism-envelope-v1；仅验证研究分级，不证明法规合法或真实场景安全",
+          "supporting_evidence": [
+            "S:registry:0:registered",
+            "S:permission_query:0:applied",
+            "S:rid:0:altitude"
+          ],
+          "text": "风险等级：HIGH",
+          "value": "HIGH"
+        }
+      ],
+      "final_decision": "WARNING",
+      "issues": [],
+      "missing_required": [],
+      "rationale": "有风险且合成分级规则支持，自动预警；匹配合成机制规则 mechanism-envelope-v1；仅验证研究分级，不证明法规合法或真实场景安全",
+      "rule_hits": [
+        "R2",
+        "research:high-envelope"
+      ],
+      "rule_version_used": {
+        "audit_depth": "0.1.0",
+        "decision_gate": "0.7.1",
+        "fields": "0.2.0"
+      }
+    },
+    "candidate": {
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "最高高度151米",
+          "value": 151
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "UNKNOWN",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "风险等级：HIGH",
+          "value": "HIGH"
+        }
+      ],
+      "event_summary": "合成机制候选；非实测研判",
+      "risk_level": "HIGH",
+      "risk_reasons": [],
+      "status": "WARNING",
+      "uncertainty": []
+    },
+    "case_id": "MECH-00-clean_high",
+    "input": {
+      "case_id": "MECH-00-clean_high",
+      "context": {
+        "aircraft_id": "SYNTH-A-00",
+        "event_time": "2026-10-11T10:00:00Z"
+      },
+      "empty_fields": [],
+      "event": {
+        "altitude": 151,
+        "behavior": "UNKNOWN",
+        "documents": "UNKNOWN",
+        "drone_identity": "UNKNOWN",
+        "event_id": "MECH-00-clean_high",
+        "event_time": "2026-10-11T10:00:00Z",
+        "images": "UNKNOWN",
+        "location": "UNKNOWN",
+        "metadata": "UNKNOWN",
+        "region_type": "UNKNOWN",
+        "registration_status": true,
+        "speed": "UNKNOWN",
+        "text_records": "",
+        "trajectory": "UNKNOWN",
+        "videos": "UNKNOWN"
+      },
+      "evidence": [
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude",
+          "field": "altitude",
+          "path": "raw_evidence.sources.rid.altitude",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": 151
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.rid.aircraft_id",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_unit",
+          "field": "altitude_unit",
+          "path": "raw_evidence.sources.rid.altitude_unit",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "m"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_datum",
+          "field": "altitude_datum",
+          "path": "raw_evidence.sources.rid.altitude_datum",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "AGL"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:registered",
+          "field": "registration_status",
+          "path": "raw_evidence.sources.registry.registered",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.registry.aircraft_id",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:applied",
+          "field": "flight_permission",
+          "path": "raw_evidence.sources.permission_query.applied",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.permission_query.aircraft_id",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        }
+      ],
+      "existing_ai_output": null,
+      "is_constructed": true,
+      "missing_fields": [
+        "location",
+        "drone_identity",
+        "speed",
+        "trajectory",
+        "region_type",
+        "behavior",
+        "documents",
+        "images",
+        "videos",
+        "metadata"
+      ],
+      "raw_evidence": {
+        "research_policy": {
+          "altitude_datum": "AGL",
+          "altitude_unit": "m",
+          "policy_id": "mechanism-envelope-v1",
+          "rules": [
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "lte",
+                  "value": 100
+                }
+              ],
+              "risk_level": "LOW",
+              "rule_id": "low-envelope"
+            },
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "gt",
+                  "value": 100
+                }
+              ],
+              "risk_level": "HIGH",
+              "rule_id": "high-envelope"
+            }
+          ],
+          "scope": "synthetic_mechanism_only"
+        },
+        "sources": {
+          "permission_query": {
+            "aircraft_id": "SYNTH-A-00",
+            "applied": true
+          },
+          "registry": {
+            "aircraft_id": "SYNTH-A-00",
+            "registered": true
+          },
+          "rid": {
+            "aircraft_id": "SYNTH-A-00",
+            "altitude": 151,
+            "altitude_datum": "AGL",
+            "altitude_unit": "m"
+          }
+        }
+      },
+      "required_evidence": [
+        "registration_status",
+        "flight_permission",
+        "altitude"
+      ]
+    },
+    "original": "已实名登记。已提出飞行申请。最高高度151米。风险等级：HIGH。"
+  },
+  {
+    "audit": {
+      "audit_depth": "L0",
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:registry:0:registered"
+          ],
+          "text": "已完成实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:permission_query:0:applied"
+          ],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:rid:0:altitude"
+          ],
+          "text": "最高飞行高度20米",
+          "value": 20
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "SUPPORTED",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "匹配合成机制规则 mechanism-envelope-v1；仅验证研究分级，不证明法规合法或真实场景安全",
+          "supporting_evidence": [
+            "S:registry:0:registered",
+            "S:permission_query:0:applied",
+            "S:rid:0:altitude"
+          ],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "final_decision": "PASS",
+      "issues": [],
+      "missing_required": [],
+      "rationale": "当前要件与主张通过合成机制检查，可自动展示辅助研判；匹配合成机制规则 mechanism-envelope-v1；仅验证研究分级，不证明法规合法或真实场景安全",
+      "rule_hits": [
+        "R1",
+        "research:low-envelope"
+      ],
+      "rule_version_used": {
+        "audit_depth": "0.1.0",
+        "decision_gate": "0.7.1",
+        "fields": "0.2.0"
+      }
+    },
+    "candidate": {
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已完成实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "最高飞行高度20米",
+          "value": 20
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "UNKNOWN",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "event_summary": "合成机制候选；非实测研判",
+      "risk_level": "LOW",
+      "risk_reasons": [],
+      "status": "PASS",
+      "uncertainty": []
+    },
+    "case_id": "MECH-00-wording",
+    "input": {
+      "case_id": "MECH-00-wording",
+      "context": {
+        "aircraft_id": "SYNTH-A-00",
+        "event_time": "2026-10-11T10:00:00Z"
+      },
+      "empty_fields": [],
+      "event": {
+        "altitude": 20,
+        "behavior": "UNKNOWN",
+        "documents": "UNKNOWN",
+        "drone_identity": "UNKNOWN",
+        "event_id": "MECH-00-wording",
+        "event_time": "2026-10-11T10:00:00Z",
+        "images": "UNKNOWN",
+        "location": "UNKNOWN",
+        "metadata": "UNKNOWN",
+        "region_type": "UNKNOWN",
+        "registration_status": true,
+        "speed": "UNKNOWN",
+        "text_records": "",
+        "trajectory": "UNKNOWN",
+        "videos": "UNKNOWN"
+      },
+      "evidence": [
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude",
+          "field": "altitude",
+          "path": "raw_evidence.sources.rid.altitude",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": 20
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.rid.aircraft_id",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_unit",
+          "field": "altitude_unit",
+          "path": "raw_evidence.sources.rid.altitude_unit",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "m"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_datum",
+          "field": "altitude_datum",
+          "path": "raw_evidence.sources.rid.altitude_datum",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "AGL"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:registered",
+          "field": "registration_status",
+          "path": "raw_evidence.sources.registry.registered",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.registry.aircraft_id",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:applied",
+          "field": "flight_permission",
+          "path": "raw_evidence.sources.permission_query.applied",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.permission_query.aircraft_id",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        }
+      ],
+      "existing_ai_output": null,
+      "is_constructed": true,
+      "missing_fields": [
+        "location",
+        "drone_identity",
+        "speed",
+        "trajectory",
+        "region_type",
+        "behavior",
+        "documents",
+        "images",
+        "videos",
+        "metadata"
+      ],
+      "raw_evidence": {
+        "research_policy": {
+          "altitude_datum": "AGL",
+          "altitude_unit": "m",
+          "policy_id": "mechanism-envelope-v1",
+          "rules": [
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "lte",
+                  "value": 100
+                }
+              ],
+              "risk_level": "LOW",
+              "rule_id": "low-envelope"
+            },
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "gt",
+                  "value": 100
+                }
+              ],
+              "risk_level": "HIGH",
+              "rule_id": "high-envelope"
+            }
+          ],
+          "scope": "synthetic_mechanism_only"
+        },
+        "sources": {
+          "permission_query": {
+            "aircraft_id": "SYNTH-A-00",
+            "applied": true
+          },
+          "registry": {
+            "aircraft_id": "SYNTH-A-00",
+            "registered": true
+          },
+          "rid": {
+            "aircraft_id": "SYNTH-A-00",
+            "altitude": 20,
+            "altitude_datum": "AGL",
+            "altitude_unit": "m"
+          }
+        }
+      },
+      "required_evidence": [
+        "registration_status",
+        "flight_permission",
+        "altitude"
+      ]
+    },
+    "original": "已完成实名登记。已提出飞行申请。最高飞行高度20米。风险等级：LOW。"
+  },
+  {
+    "audit": {
+      "audit_depth": "L0",
+      "claims": [
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:rid:0:altitude"
+          ],
+          "text": "最高高度20米",
+          "value": 20
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:permission_query:0:applied"
+          ],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:registry:0:registered"
+          ],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c3",
+            "c2",
+            "c1"
+          ],
+          "evidence_status": "SUPPORTED",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "匹配合成机制规则 mechanism-envelope-v1；仅验证研究分级，不证明法规合法或真实场景安全",
+          "supporting_evidence": [
+            "S:registry:0:registered",
+            "S:permission_query:0:applied",
+            "S:rid:0:altitude"
+          ],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "final_decision": "PASS",
+      "issues": [],
+      "missing_required": [],
+      "rationale": "当前要件与主张通过合成机制检查，可自动展示辅助研判；匹配合成机制规则 mechanism-envelope-v1；仅验证研究分级，不证明法规合法或真实场景安全",
+      "rule_hits": [
+        "R1",
+        "research:low-envelope"
+      ],
+      "rule_version_used": {
+        "audit_depth": "0.1.0",
+        "decision_gate": "0.7.1",
+        "fields": "0.2.0"
+      }
+    },
+    "candidate": {
+      "claims": [
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "最高高度20米",
+          "value": 20
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c3",
+            "c2",
+            "c1"
+          ],
+          "evidence_status": "UNKNOWN",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "event_summary": "合成机制候选；非实测研判",
+      "risk_level": "LOW",
+      "risk_reasons": [],
+      "status": "PASS",
+      "uncertainty": []
+    },
+    "case_id": "MECH-00-reordered",
+    "input": {
+      "case_id": "MECH-00-reordered",
+      "context": {
+        "aircraft_id": "SYNTH-A-00",
+        "event_time": "2026-10-11T10:00:00Z"
+      },
+      "empty_fields": [],
+      "event": {
+        "altitude": 20,
+        "behavior": "UNKNOWN",
+        "documents": "UNKNOWN",
+        "drone_identity": "UNKNOWN",
+        "event_id": "MECH-00-reordered",
+        "event_time": "2026-10-11T10:00:00Z",
+        "images": "UNKNOWN",
+        "location": "UNKNOWN",
+        "metadata": "UNKNOWN",
+        "region_type": "UNKNOWN",
+        "registration_status": true,
+        "speed": "UNKNOWN",
+        "text_records": "",
+        "trajectory": "UNKNOWN",
+        "videos": "UNKNOWN"
+      },
+      "evidence": [
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude",
+          "field": "altitude",
+          "path": "raw_evidence.sources.rid.altitude",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": 20
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.rid.aircraft_id",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_unit",
+          "field": "altitude_unit",
+          "path": "raw_evidence.sources.rid.altitude_unit",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "m"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_datum",
+          "field": "altitude_datum",
+          "path": "raw_evidence.sources.rid.altitude_datum",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "AGL"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:registered",
+          "field": "registration_status",
+          "path": "raw_evidence.sources.registry.registered",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.registry.aircraft_id",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:applied",
+          "field": "flight_permission",
+          "path": "raw_evidence.sources.permission_query.applied",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.permission_query.aircraft_id",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        }
+      ],
+      "existing_ai_output": null,
+      "is_constructed": true,
+      "missing_fields": [
+        "location",
+        "drone_identity",
+        "speed",
+        "trajectory",
+        "region_type",
+        "behavior",
+        "documents",
+        "images",
+        "videos",
+        "metadata"
+      ],
+      "raw_evidence": {
+        "research_policy": {
+          "altitude_datum": "AGL",
+          "altitude_unit": "m",
+          "policy_id": "mechanism-envelope-v1",
+          "rules": [
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "lte",
+                  "value": 100
+                }
+              ],
+              "risk_level": "LOW",
+              "rule_id": "low-envelope"
+            },
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "gt",
+                  "value": 100
+                }
+              ],
+              "risk_level": "HIGH",
+              "rule_id": "high-envelope"
+            }
+          ],
+          "scope": "synthetic_mechanism_only"
+        },
+        "sources": {
+          "permission_query": {
+            "aircraft_id": "SYNTH-A-00",
+            "applied": true
+          },
+          "registry": {
+            "aircraft_id": "SYNTH-A-00",
+            "registered": true
+          },
+          "rid": {
+            "aircraft_id": "SYNTH-A-00",
+            "altitude": 20,
+            "altitude_datum": "AGL",
+            "altitude_unit": "m"
+          }
+        }
+      },
+      "required_evidence": [
+        "registration_status",
+        "flight_permission",
+        "altitude"
+      ]
+    },
+    "original": "最高高度20米。已提出飞行申请。已实名登记。风险等级：LOW。"
+  },
+  {
+    "audit": {
+      "audit_depth": "L0",
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:registry:0:registered"
+          ],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:permission_query:0:applied"
+          ],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:rid:0:altitude"
+          ],
+          "text": "最高高度20米",
+          "value": 20
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "SUPPORTED",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "匹配合成机制规则 mechanism-envelope-v1；仅验证研究分级，不证明法规合法或真实场景安全",
+          "supporting_evidence": [
+            "S:registry:0:registered",
+            "S:permission_query:0:applied",
+            "S:rid:0:altitude"
+          ],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "final_decision": "PASS",
+      "issues": [],
+      "missing_required": [],
+      "rationale": "当前要件与主张通过合成机制检查，可自动展示辅助研判；匹配合成机制规则 mechanism-envelope-v1；仅验证研究分级，不证明法规合法或真实场景安全",
+      "rule_hits": [
+        "R1",
+        "research:low-envelope"
+      ],
+      "rule_version_used": {
+        "audit_depth": "0.1.0",
+        "decision_gate": "0.7.1",
+        "fields": "0.2.0"
+      }
+    },
+    "candidate": {
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "最高高度20米",
+          "value": 20
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "UNKNOWN",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "event_summary": "合成机制候选；非实测研判",
+      "risk_level": "LOW",
+      "risk_reasons": [],
+      "status": "PASS",
+      "uncertainty": []
+    },
+    "case_id": "MECH-00-irrelevant",
+    "input": {
+      "case_id": "MECH-00-irrelevant",
+      "context": {
+        "aircraft_id": "SYNTH-A-00",
+        "event_time": "2026-10-11T10:00:00Z"
+      },
+      "empty_fields": [],
+      "event": {
+        "altitude": 20,
+        "behavior": "UNKNOWN",
+        "documents": "UNKNOWN",
+        "drone_identity": "UNKNOWN",
+        "event_id": "MECH-00-irrelevant",
+        "event_time": "2026-10-11T10:00:00Z",
+        "images": "UNKNOWN",
+        "location": "UNKNOWN",
+        "metadata": "UNKNOWN",
+        "region_type": "UNKNOWN",
+        "registration_status": true,
+        "speed": "UNKNOWN",
+        "text_records": "",
+        "trajectory": "UNKNOWN",
+        "videos": "UNKNOWN"
+      },
+      "evidence": [
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude",
+          "field": "altitude",
+          "path": "raw_evidence.sources.rid.altitude",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": 20
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.rid.aircraft_id",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_unit",
+          "field": "altitude_unit",
+          "path": "raw_evidence.sources.rid.altitude_unit",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "m"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_datum",
+          "field": "altitude_datum",
+          "path": "raw_evidence.sources.rid.altitude_datum",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "AGL"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:registered",
+          "field": "registration_status",
+          "path": "raw_evidence.sources.registry.registered",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.registry.aircraft_id",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:applied",
+          "field": "flight_permission",
+          "path": "raw_evidence.sources.permission_query.applied",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.permission_query.aircraft_id",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:environment:0:temperature_c",
+          "field": "temperature_c",
+          "path": "raw_evidence.sources.environment.temperature_c",
+          "source": "environment",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": 22
+        }
+      ],
+      "existing_ai_output": null,
+      "is_constructed": true,
+      "missing_fields": [
+        "location",
+        "drone_identity",
+        "speed",
+        "trajectory",
+        "region_type",
+        "behavior",
+        "documents",
+        "images",
+        "videos",
+        "metadata"
+      ],
+      "raw_evidence": {
+        "research_policy": {
+          "altitude_datum": "AGL",
+          "altitude_unit": "m",
+          "policy_id": "mechanism-envelope-v1",
+          "rules": [
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "lte",
+                  "value": 100
+                }
+              ],
+              "risk_level": "LOW",
+              "rule_id": "low-envelope"
+            },
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "gt",
+                  "value": 100
+                }
+              ],
+              "risk_level": "HIGH",
+              "rule_id": "high-envelope"
+            }
+          ],
+          "scope": "synthetic_mechanism_only"
+        },
+        "sources": {
+          "environment": {
+            "temperature_c": 22
+          },
+          "permission_query": {
+            "aircraft_id": "SYNTH-A-00",
+            "applied": true
+          },
+          "registry": {
+            "aircraft_id": "SYNTH-A-00",
+            "registered": true
+          },
+          "rid": {
+            "aircraft_id": "SYNTH-A-00",
+            "altitude": 20,
+            "altitude_datum": "AGL",
+            "altitude_unit": "m"
+          }
+        }
+      },
+      "required_evidence": [
+        "registration_status",
+        "flight_permission",
+        "altitude"
+      ]
+    },
+    "original": "已实名登记。已提出飞行申请。最高高度20米。风险等级：LOW。"
+  },
+  {
+    "audit": {
+      "audit_depth": "L0",
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:registry:0:registered"
+          ],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:permission_query:0:applied"
+          ],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:rid:0:altitude"
+          ],
+          "text": "最高高度0米",
+          "value": 0
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "SUPPORTED",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "匹配合成机制规则 mechanism-envelope-v1；仅验证研究分级，不证明法规合法或真实场景安全",
+          "supporting_evidence": [
+            "S:registry:0:registered",
+            "S:permission_query:0:applied",
+            "S:rid:0:altitude"
+          ],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "final_decision": "PASS",
+      "issues": [],
+      "missing_required": [],
+      "rationale": "当前要件与主张通过合成机制检查，可自动展示辅助研判；匹配合成机制规则 mechanism-envelope-v1；仅验证研究分级，不证明法规合法或真实场景安全",
+      "rule_hits": [
+        "R1",
+        "research:low-envelope"
+      ],
+      "rule_version_used": {
+        "audit_depth": "0.1.0",
+        "decision_gate": "0.7.1",
+        "fields": "0.2.0"
+      }
+    },
+    "candidate": {
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "最高高度0米",
+          "value": 0
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "UNKNOWN",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "event_summary": "合成机制候选；非实测研判",
+      "risk_level": "LOW",
+      "risk_reasons": [],
+      "status": "PASS",
+      "uncertainty": []
+    },
+    "case_id": "MECH-00-zero_altitude",
+    "input": {
+      "case_id": "MECH-00-zero_altitude",
+      "context": {
+        "aircraft_id": "SYNTH-A-00",
+        "event_time": "2026-10-11T10:00:00Z"
+      },
+      "empty_fields": [],
+      "event": {
+        "altitude": 0,
+        "behavior": "UNKNOWN",
+        "documents": "UNKNOWN",
+        "drone_identity": "UNKNOWN",
+        "event_id": "MECH-00-zero_altitude",
+        "event_time": "2026-10-11T10:00:00Z",
+        "images": "UNKNOWN",
+        "location": "UNKNOWN",
+        "metadata": "UNKNOWN",
+        "region_type": "UNKNOWN",
+        "registration_status": true,
+        "speed": "UNKNOWN",
+        "text_records": "",
+        "trajectory": "UNKNOWN",
+        "videos": "UNKNOWN"
+      },
+      "evidence": [
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude",
+          "field": "altitude",
+          "path": "raw_evidence.sources.rid.altitude",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": 0
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.rid.aircraft_id",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_unit",
+          "field": "altitude_unit",
+          "path": "raw_evidence.sources.rid.altitude_unit",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "m"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_datum",
+          "field": "altitude_datum",
+          "path": "raw_evidence.sources.rid.altitude_datum",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "AGL"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:registered",
+          "field": "registration_status",
+          "path": "raw_evidence.sources.registry.registered",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.registry.aircraft_id",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:applied",
+          "field": "flight_permission",
+          "path": "raw_evidence.sources.permission_query.applied",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.permission_query.aircraft_id",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        }
+      ],
+      "existing_ai_output": null,
+      "is_constructed": true,
+      "missing_fields": [
+        "location",
+        "drone_identity",
+        "speed",
+        "trajectory",
+        "region_type",
+        "behavior",
+        "documents",
+        "images",
+        "videos",
+        "metadata"
+      ],
+      "raw_evidence": {
+        "research_policy": {
+          "altitude_datum": "AGL",
+          "altitude_unit": "m",
+          "policy_id": "mechanism-envelope-v1",
+          "rules": [
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "lte",
+                  "value": 100
+                }
+              ],
+              "risk_level": "LOW",
+              "rule_id": "low-envelope"
+            },
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "gt",
+                  "value": 100
+                }
+              ],
+              "risk_level": "HIGH",
+              "rule_id": "high-envelope"
+            }
+          ],
+          "scope": "synthetic_mechanism_only"
+        },
+        "sources": {
+          "permission_query": {
+            "aircraft_id": "SYNTH-A-00",
+            "applied": true
+          },
+          "registry": {
+            "aircraft_id": "SYNTH-A-00",
+            "registered": true
+          },
+          "rid": {
+            "aircraft_id": "SYNTH-A-00",
+            "altitude": 0,
+            "altitude_datum": "AGL",
+            "altitude_unit": "m"
+          }
+        }
+      },
+      "required_evidence": [
+        "registration_status",
+        "flight_permission",
+        "altitude"
+      ]
+    },
+    "original": "已实名登记。已提出飞行申请。最高高度0米。风险等级：LOW。"
+  },
+  {
+    "audit": {
+      "audit_depth": "L2",
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:registry:0:registered"
+          ],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:permission_query:0:applied"
+          ],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [
+            "S:rid:0:altitude"
+          ],
+          "depends_on": [],
+          "evidence_status": "CONTRADICTED",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "存在字段级反证；未忽略反向证据",
+          "supporting_evidence": [],
+          "text": "最高高度21米",
+          "value": 21
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "INSUFFICIENT",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "字段比对成立，但推理/结论的依赖或要件不完整",
+          "supporting_evidence": [
+            "S:registry:0:registered",
+            "S:permission_query:0:applied",
+            "S:rid:0:altitude"
+          ],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "final_decision": "MANUAL_REVIEW",
+      "issues": [
+        {
+          "claim_id": "c3",
+          "code_e": "E4",
+          "code_status": "mapped_per_resolution",
+          "evidence_ids": [
+            "S:rid:0:altitude"
+          ],
+          "issue_type": "FACTUAL_ERROR",
+          "reason": "存在字段级反证；未忽略反向证据"
+        },
+        {
+          "claim_id": "r1",
+          "code_e": null,
+          "code_status": "pending_code_table",
+          "evidence_ids": [],
+          "issue_type": "OVER_INFERENCE",
+          "reason": "推理/结论依赖缺失、未获支持或关键要件不足"
+        }
+      ],
+      "missing_required": [],
+      "rationale": "存在未解问题，需人工复核；匹配合成机制规则 mechanism-envelope-v1；仅验证研究分级，不证明法规合法或真实场景安全",
+      "rule_hits": [
+        "R3",
+        "research:low-envelope"
+      ],
+      "rule_version_used": {
+        "audit_depth": "0.1.0",
+        "decision_gate": "0.7.1",
+        "fields": "0.2.0"
+      }
+    },
+    "candidate": {
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "最高高度21米",
+          "value": 21
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "UNKNOWN",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "event_summary": "合成机制候选；非实测研判",
+      "risk_level": "LOW",
+      "risk_reasons": [],
+      "status": "PASS",
+      "uncertainty": []
+    },
+    "case_id": "MECH-00-fact_error",
+    "input": {
+      "case_id": "MECH-00-fact_error",
+      "context": {
+        "aircraft_id": "SYNTH-A-00",
+        "event_time": "2026-10-11T10:00:00Z"
+      },
+      "empty_fields": [],
+      "event": {
+        "altitude": 20,
+        "behavior": "UNKNOWN",
+        "documents": "UNKNOWN",
+        "drone_identity": "UNKNOWN",
+        "event_id": "MECH-00-fact_error",
+        "event_time": "2026-10-11T10:00:00Z",
+        "images": "UNKNOWN",
+        "location": "UNKNOWN",
+        "metadata": "UNKNOWN",
+        "region_type": "UNKNOWN",
+        "registration_status": true,
+        "speed": "UNKNOWN",
+        "text_records": "",
+        "trajectory": "UNKNOWN",
+        "videos": "UNKNOWN"
+      },
+      "evidence": [
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude",
+          "field": "altitude",
+          "path": "raw_evidence.sources.rid.altitude",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": 20
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.rid.aircraft_id",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_unit",
+          "field": "altitude_unit",
+          "path": "raw_evidence.sources.rid.altitude_unit",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "m"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_datum",
+          "field": "altitude_datum",
+          "path": "raw_evidence.sources.rid.altitude_datum",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "AGL"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:registered",
+          "field": "registration_status",
+          "path": "raw_evidence.sources.registry.registered",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.registry.aircraft_id",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:applied",
+          "field": "flight_permission",
+          "path": "raw_evidence.sources.permission_query.applied",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.permission_query.aircraft_id",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        }
+      ],
+      "existing_ai_output": null,
+      "is_constructed": true,
+      "missing_fields": [
+        "location",
+        "drone_identity",
+        "speed",
+        "trajectory",
+        "region_type",
+        "behavior",
+        "documents",
+        "images",
+        "videos",
+        "metadata"
+      ],
+      "raw_evidence": {
+        "research_policy": {
+          "altitude_datum": "AGL",
+          "altitude_unit": "m",
+          "policy_id": "mechanism-envelope-v1",
+          "rules": [
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "lte",
+                  "value": 100
+                }
+              ],
+              "risk_level": "LOW",
+              "rule_id": "low-envelope"
+            },
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "gt",
+                  "value": 100
+                }
+              ],
+              "risk_level": "HIGH",
+              "rule_id": "high-envelope"
+            }
+          ],
+          "scope": "synthetic_mechanism_only"
+        },
+        "sources": {
+          "permission_query": {
+            "aircraft_id": "SYNTH-A-00",
+            "applied": true
+          },
+          "registry": {
+            "aircraft_id": "SYNTH-A-00",
+            "registered": true
+          },
+          "rid": {
+            "aircraft_id": "SYNTH-A-00",
+            "altitude": 20,
+            "altitude_datum": "AGL",
+            "altitude_unit": "m"
+          }
+        }
+      },
+      "required_evidence": [
+        "registration_status",
+        "flight_permission",
+        "altitude"
+      ]
+    },
+    "original": "已实名登记。已提出飞行申请。最高高度21米。风险等级：LOW。"
+  },
+  {
+    "audit": {
+      "audit_depth": "L2",
+      "claims": [
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:permission_query:0:applied"
+          ],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:rid:0:altitude"
+          ],
+          "text": "最高高度20米",
+          "value": 20
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "SUPPORTED",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "匹配合成机制规则 mechanism-envelope-v1；仅验证研究分级，不证明法规合法或真实场景安全",
+          "supporting_evidence": [
+            "S:registry:0:registered",
+            "S:permission_query:0:applied",
+            "S:rid:0:altitude"
+          ],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "final_decision": "MANUAL_REVIEW",
+      "issues": [
+        {
+          "claim_id": null,
+          "code_e": "E3",
+          "code_status": "mapped_per_resolution",
+          "evidence_ids": [
+            "S:registry:0:registered"
+          ],
+          "issue_type": "OMISSION",
+          "reason": "已提供的关键字段未在主张中覆盖：registration_status"
+        }
+      ],
+      "missing_required": [],
+      "rationale": "存在未解问题，需人工复核；匹配合成机制规则 mechanism-envelope-v1；仅验证研究分级，不证明法规合法或真实场景安全",
+      "rule_hits": [
+        "R3",
+        "research:low-envelope"
+      ],
+      "rule_version_used": {
+        "audit_depth": "0.1.0",
+        "decision_gate": "0.7.1",
+        "fields": "0.2.0"
+      }
+    },
+    "candidate": {
+      "claims": [
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "最高高度20米",
+          "value": 20
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "UNKNOWN",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "event_summary": "合成机制候选；非实测研判",
+      "risk_level": "LOW",
+      "risk_reasons": [],
+      "status": "PASS",
+      "uncertainty": []
+    },
+    "case_id": "MECH-00-omission",
+    "input": {
+      "case_id": "MECH-00-omission",
+      "context": {
+        "aircraft_id": "SYNTH-A-00",
+        "event_time": "2026-10-11T10:00:00Z"
+      },
+      "empty_fields": [],
+      "event": {
+        "altitude": 20,
+        "behavior": "UNKNOWN",
+        "documents": "UNKNOWN",
+        "drone_identity": "UNKNOWN",
+        "event_id": "MECH-00-omission",
+        "event_time": "2026-10-11T10:00:00Z",
+        "images": "UNKNOWN",
+        "location": "UNKNOWN",
+        "metadata": "UNKNOWN",
+        "region_type": "UNKNOWN",
+        "registration_status": true,
+        "speed": "UNKNOWN",
+        "text_records": "",
+        "trajectory": "UNKNOWN",
+        "videos": "UNKNOWN"
+      },
+      "evidence": [
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude",
+          "field": "altitude",
+          "path": "raw_evidence.sources.rid.altitude",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": 20
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.rid.aircraft_id",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_unit",
+          "field": "altitude_unit",
+          "path": "raw_evidence.sources.rid.altitude_unit",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "m"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_datum",
+          "field": "altitude_datum",
+          "path": "raw_evidence.sources.rid.altitude_datum",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "AGL"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:registered",
+          "field": "registration_status",
+          "path": "raw_evidence.sources.registry.registered",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.registry.aircraft_id",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:applied",
+          "field": "flight_permission",
+          "path": "raw_evidence.sources.permission_query.applied",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.permission_query.aircraft_id",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        }
+      ],
+      "existing_ai_output": null,
+      "is_constructed": true,
+      "missing_fields": [
+        "location",
+        "drone_identity",
+        "speed",
+        "trajectory",
+        "region_type",
+        "behavior",
+        "documents",
+        "images",
+        "videos",
+        "metadata"
+      ],
+      "raw_evidence": {
+        "research_policy": {
+          "altitude_datum": "AGL",
+          "altitude_unit": "m",
+          "policy_id": "mechanism-envelope-v1",
+          "rules": [
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "lte",
+                  "value": 100
+                }
+              ],
+              "risk_level": "LOW",
+              "rule_id": "low-envelope"
+            },
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "gt",
+                  "value": 100
+                }
+              ],
+              "risk_level": "HIGH",
+              "rule_id": "high-envelope"
+            }
+          ],
+          "scope": "synthetic_mechanism_only"
+        },
+        "sources": {
+          "permission_query": {
+            "aircraft_id": "SYNTH-A-00",
+            "applied": true
+          },
+          "registry": {
+            "aircraft_id": "SYNTH-A-00",
+            "registered": true
+          },
+          "rid": {
+            "aircraft_id": "SYNTH-A-00",
+            "altitude": 20,
+            "altitude_datum": "AGL",
+            "altitude_unit": "m"
+          }
+        }
+      },
+      "required_evidence": [
+        "registration_status",
+        "flight_permission",
+        "altitude"
+      ]
+    },
+    "original": "已提出飞行申请。最高高度20米。风险等级：LOW。"
+  },
+  {
+    "audit": {
+      "audit_depth": "L2",
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:registry:0:registered"
+          ],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "未发现可映射的字段证据",
+          "supporting_evidence": [],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:rid:0:altitude"
+          ],
+          "text": "最高高度20米",
+          "value": 20
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "INSUFFICIENT",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "合成机制规则条件缺失、来源不足或比较类型不可靠",
+          "supporting_evidence": [],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "final_decision": "MANUAL_REVIEW",
+      "issues": [
+        {
+          "claim_id": null,
+          "code_e": null,
+          "code_status": "pending_code_table",
+          "evidence_ids": [],
+          "issue_type": "INSUFFICIENT_EVIDENCE",
+          "reason": "缺少关键要件：flight_permission"
+        },
+        {
+          "claim_id": null,
+          "code_e": null,
+          "code_status": "pending_code_table",
+          "evidence_ids": [],
+          "issue_type": "INSUFFICIENT_EVIDENCE",
+          "reason": "合成机制规则条件缺失、来源不足或比较类型不可靠"
+        },
+        {
+          "claim_id": "r1",
+          "code_e": null,
+          "code_status": "pending_code_table",
+          "evidence_ids": [],
+          "issue_type": "OVER_INFERENCE",
+          "reason": "推理/结论依赖缺失、未获支持或关键要件不足"
+        }
+      ],
+      "missing_required": [
+        "flight_permission"
+      ],
+      "rationale": "存在未解问题，需人工复核",
+      "rule_hits": [
+        "R3"
+      ],
+      "rule_version_used": {
+        "audit_depth": "0.1.0",
+        "decision_gate": "0.7.1",
+        "fields": "0.2.0"
+      }
+    },
+    "candidate": {
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "最高高度20米",
+          "value": 20
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "UNKNOWN",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "event_summary": "合成机制候选；非实测研判",
+      "risk_level": "LOW",
+      "risk_reasons": [],
+      "status": "PASS",
+      "uncertainty": []
+    },
+    "case_id": "MECH-00-missing",
+    "input": {
+      "case_id": "MECH-00-missing",
+      "context": {
+        "aircraft_id": "SYNTH-A-00",
+        "event_time": "2026-10-11T10:00:00Z"
+      },
+      "empty_fields": [],
+      "event": {
+        "altitude": 20,
+        "behavior": "UNKNOWN",
+        "documents": "UNKNOWN",
+        "drone_identity": "UNKNOWN",
+        "event_id": "MECH-00-missing",
+        "event_time": "2026-10-11T10:00:00Z",
+        "images": "UNKNOWN",
+        "location": "UNKNOWN",
+        "metadata": "UNKNOWN",
+        "region_type": "UNKNOWN",
+        "registration_status": true,
+        "speed": "UNKNOWN",
+        "text_records": "",
+        "trajectory": "UNKNOWN",
+        "videos": "UNKNOWN"
+      },
+      "evidence": [
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude",
+          "field": "altitude",
+          "path": "raw_evidence.sources.rid.altitude",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": 20
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.rid.aircraft_id",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_unit",
+          "field": "altitude_unit",
+          "path": "raw_evidence.sources.rid.altitude_unit",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "m"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_datum",
+          "field": "altitude_datum",
+          "path": "raw_evidence.sources.rid.altitude_datum",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "AGL"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:registered",
+          "field": "registration_status",
+          "path": "raw_evidence.sources.registry.registered",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.registry.aircraft_id",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.permission_query.aircraft_id",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        }
+      ],
+      "existing_ai_output": null,
+      "is_constructed": true,
+      "missing_fields": [
+        "location",
+        "drone_identity",
+        "speed",
+        "trajectory",
+        "region_type",
+        "behavior",
+        "documents",
+        "images",
+        "videos",
+        "metadata"
+      ],
+      "raw_evidence": {
+        "research_policy": {
+          "altitude_datum": "AGL",
+          "altitude_unit": "m",
+          "policy_id": "mechanism-envelope-v1",
+          "rules": [
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "lte",
+                  "value": 100
+                }
+              ],
+              "risk_level": "LOW",
+              "rule_id": "low-envelope"
+            },
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "gt",
+                  "value": 100
+                }
+              ],
+              "risk_level": "HIGH",
+              "rule_id": "high-envelope"
+            }
+          ],
+          "scope": "synthetic_mechanism_only"
+        },
+        "sources": {
+          "permission_query": {
+            "aircraft_id": "SYNTH-A-00"
+          },
+          "registry": {
+            "aircraft_id": "SYNTH-A-00",
+            "registered": true
+          },
+          "rid": {
+            "aircraft_id": "SYNTH-A-00",
+            "altitude": 20,
+            "altitude_datum": "AGL",
+            "altitude_unit": "m"
+          }
+        }
+      },
+      "required_evidence": [
+        "registration_status",
+        "flight_permission",
+        "altitude"
+      ]
+    },
+    "original": "已实名登记。已提出飞行申请。最高高度20米。风险等级：LOW。"
+  },
+  {
+    "audit": {
+      "audit_depth": "L2",
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:registry:0:registered"
+          ],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:permission_query:0:applied"
+          ],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [
+            "S:radar:0:altitude"
+          ],
+          "depends_on": [],
+          "evidence_status": "CONTRADICTED",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "存在字段级反证；未忽略反向证据",
+          "supporting_evidence": [],
+          "text": "最高高度20米",
+          "value": 20
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "INSUFFICIENT",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "证据存在来源冲突，合成机制规则不能证明风险结论",
+          "supporting_evidence": [],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "final_decision": "MANUAL_REVIEW",
+      "issues": [
+        {
+          "claim_id": null,
+          "code_e": null,
+          "code_status": "pending_code_table",
+          "evidence_ids": [
+            "S:rid:0:altitude",
+            "S:radar:0:altitude"
+          ],
+          "issue_type": "EVIDENCE_CONFLICT",
+          "reason": "altitude的独立来源不一致，未擅自挑选有利来源"
+        },
+        {
+          "claim_id": "c3",
+          "code_e": "E4",
+          "code_status": "mapped_per_resolution",
+          "evidence_ids": [
+            "S:radar:0:altitude"
+          ],
+          "issue_type": "FACTUAL_ERROR",
+          "reason": "存在字段级反证；未忽略反向证据"
+        },
+        {
+          "claim_id": null,
+          "code_e": null,
+          "code_status": "pending_code_table",
+          "evidence_ids": [],
+          "issue_type": "INSUFFICIENT_EVIDENCE",
+          "reason": "证据存在来源冲突，合成机制规则不能证明风险结论"
+        },
+        {
+          "claim_id": "r1",
+          "code_e": null,
+          "code_status": "pending_code_table",
+          "evidence_ids": [],
+          "issue_type": "OVER_INFERENCE",
+          "reason": "推理/结论依赖缺失、未获支持或关键要件不足"
+        }
+      ],
+      "missing_required": [],
+      "rationale": "存在未解问题，需人工复核",
+      "rule_hits": [
+        "R3"
+      ],
+      "rule_version_used": {
+        "audit_depth": "0.1.0",
+        "decision_gate": "0.7.1",
+        "fields": "0.2.0"
+      }
+    },
+    "candidate": {
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "最高高度20米",
+          "value": 20
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "UNKNOWN",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "event_summary": "合成机制候选；非实测研判",
+      "risk_level": "LOW",
+      "risk_reasons": [],
+      "status": "PASS",
+      "uncertainty": []
+    },
+    "case_id": "MECH-00-conflict",
+    "input": {
+      "case_id": "MECH-00-conflict",
+      "context": {
+        "aircraft_id": "SYNTH-A-00",
+        "event_time": "2026-10-11T10:00:00Z"
+      },
+      "empty_fields": [],
+      "event": {
+        "altitude": 30,
+        "behavior": "UNKNOWN",
+        "documents": "UNKNOWN",
+        "drone_identity": "UNKNOWN",
+        "event_id": "MECH-00-conflict",
+        "event_time": "2026-10-11T10:00:00Z",
+        "images": "UNKNOWN",
+        "location": "UNKNOWN",
+        "metadata": "UNKNOWN",
+        "region_type": "UNKNOWN",
+        "registration_status": true,
+        "speed": "UNKNOWN",
+        "text_records": "",
+        "trajectory": "UNKNOWN",
+        "videos": "UNKNOWN"
+      },
+      "evidence": [
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude",
+          "field": "altitude",
+          "path": "raw_evidence.sources.rid.altitude",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": 20
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.rid.aircraft_id",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_unit",
+          "field": "altitude_unit",
+          "path": "raw_evidence.sources.rid.altitude_unit",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "m"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_datum",
+          "field": "altitude_datum",
+          "path": "raw_evidence.sources.rid.altitude_datum",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "AGL"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:registered",
+          "field": "registration_status",
+          "path": "raw_evidence.sources.registry.registered",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.registry.aircraft_id",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:applied",
+          "field": "flight_permission",
+          "path": "raw_evidence.sources.permission_query.applied",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.permission_query.aircraft_id",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:radar:0:altitude",
+          "field": "altitude",
+          "path": "raw_evidence.sources.radar.altitude",
+          "source": "radar",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": 30
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:radar:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.radar.aircraft_id",
+          "source": "radar",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:radar:0:altitude_unit",
+          "field": "altitude_unit",
+          "path": "raw_evidence.sources.radar.altitude_unit",
+          "source": "radar",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "m"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:radar:0:altitude_datum",
+          "field": "altitude_datum",
+          "path": "raw_evidence.sources.radar.altitude_datum",
+          "source": "radar",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "AGL"
+        }
+      ],
+      "existing_ai_output": null,
+      "is_constructed": true,
+      "missing_fields": [
+        "location",
+        "drone_identity",
+        "speed",
+        "trajectory",
+        "region_type",
+        "behavior",
+        "documents",
+        "images",
+        "videos",
+        "metadata"
+      ],
+      "raw_evidence": {
+        "research_policy": {
+          "altitude_datum": "AGL",
+          "altitude_unit": "m",
+          "policy_id": "mechanism-envelope-v1",
+          "rules": [
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "lte",
+                  "value": 100
+                }
+              ],
+              "risk_level": "LOW",
+              "rule_id": "low-envelope"
+            },
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "gt",
+                  "value": 100
+                }
+              ],
+              "risk_level": "HIGH",
+              "rule_id": "high-envelope"
+            }
+          ],
+          "scope": "synthetic_mechanism_only"
+        },
+        "sources": {
+          "permission_query": {
+            "aircraft_id": "SYNTH-A-00",
+            "applied": true
+          },
+          "radar": {
+            "aircraft_id": "SYNTH-A-00",
+            "altitude": 30,
+            "altitude_datum": "AGL",
+            "altitude_unit": "m"
+          },
+          "registry": {
+            "aircraft_id": "SYNTH-A-00",
+            "registered": true
+          },
+          "rid": {
+            "aircraft_id": "SYNTH-A-00",
+            "altitude": 20,
+            "altitude_datum": "AGL",
+            "altitude_unit": "m"
+          }
+        }
+      },
+      "required_evidence": [
+        "registration_status",
+        "flight_permission",
+        "altitude"
+      ]
+    },
+    "original": "已实名登记。已提出飞行申请。最高高度20米。风险等级：LOW。"
+  },
+  {
+    "audit": {
+      "audit_depth": "L2",
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:registry:0:registered"
+          ],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:permission_query:0:applied"
+          ],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:rid:0:altitude"
+          ],
+          "text": "最高高度151米",
+          "value": 151
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [
+            "S:registry:0:registered",
+            "S:permission_query:0:applied",
+            "S:rid:0:altitude"
+          ],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "CONTRADICTED",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "风险主张与已匹配合成机制规则不一致；不作真实场景定性",
+          "supporting_evidence": [],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "final_decision": "MANUAL_REVIEW",
+      "issues": [
+        {
+          "claim_id": null,
+          "code_e": "E1",
+          "code_status": "mapped_per_resolution",
+          "evidence_ids": [
+            "S:registry:0:registered",
+            "S:permission_query:0:applied",
+            "S:rid:0:altitude"
+          ],
+          "issue_type": "HIGH_RISK_NOT_ESCALATED",
+          "reason": "候选风险与合成机制规则不一致：候选LOW，规则HIGH；不作法规或真实场景定性"
+        }
+      ],
+      "missing_required": [],
+      "rationale": "存在未解问题，需人工复核；匹配合成机制规则 mechanism-envelope-v1；仅验证研究分级，不证明法规合法或真实场景安全",
+      "rule_hits": [
+        "R3",
+        "research:high-envelope"
+      ],
+      "rule_version_used": {
+        "audit_depth": "0.1.0",
+        "decision_gate": "0.7.1",
+        "fields": "0.2.0"
+      }
+    },
+    "candidate": {
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "最高高度151米",
+          "value": 151
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "UNKNOWN",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "event_summary": "合成机制候选；非实测研判",
+      "risk_level": "LOW",
+      "risk_reasons": [],
+      "status": "PASS",
+      "uncertainty": []
+    },
+    "case_id": "MECH-00-risk_underestimate",
+    "input": {
+      "case_id": "MECH-00-risk_underestimate",
+      "context": {
+        "aircraft_id": "SYNTH-A-00",
+        "event_time": "2026-10-11T10:00:00Z"
+      },
+      "empty_fields": [],
+      "event": {
+        "altitude": 151,
+        "behavior": "UNKNOWN",
+        "documents": "UNKNOWN",
+        "drone_identity": "UNKNOWN",
+        "event_id": "MECH-00-risk_underestimate",
+        "event_time": "2026-10-11T10:00:00Z",
+        "images": "UNKNOWN",
+        "location": "UNKNOWN",
+        "metadata": "UNKNOWN",
+        "region_type": "UNKNOWN",
+        "registration_status": true,
+        "speed": "UNKNOWN",
+        "text_records": "",
+        "trajectory": "UNKNOWN",
+        "videos": "UNKNOWN"
+      },
+      "evidence": [
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude",
+          "field": "altitude",
+          "path": "raw_evidence.sources.rid.altitude",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": 151
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.rid.aircraft_id",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_unit",
+          "field": "altitude_unit",
+          "path": "raw_evidence.sources.rid.altitude_unit",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "m"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_datum",
+          "field": "altitude_datum",
+          "path": "raw_evidence.sources.rid.altitude_datum",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "AGL"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:registered",
+          "field": "registration_status",
+          "path": "raw_evidence.sources.registry.registered",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.registry.aircraft_id",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:applied",
+          "field": "flight_permission",
+          "path": "raw_evidence.sources.permission_query.applied",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.permission_query.aircraft_id",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        }
+      ],
+      "existing_ai_output": null,
+      "is_constructed": true,
+      "missing_fields": [
+        "location",
+        "drone_identity",
+        "speed",
+        "trajectory",
+        "region_type",
+        "behavior",
+        "documents",
+        "images",
+        "videos",
+        "metadata"
+      ],
+      "raw_evidence": {
+        "research_policy": {
+          "altitude_datum": "AGL",
+          "altitude_unit": "m",
+          "policy_id": "mechanism-envelope-v1",
+          "rules": [
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "lte",
+                  "value": 100
+                }
+              ],
+              "risk_level": "LOW",
+              "rule_id": "low-envelope"
+            },
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "gt",
+                  "value": 100
+                }
+              ],
+              "risk_level": "HIGH",
+              "rule_id": "high-envelope"
+            }
+          ],
+          "scope": "synthetic_mechanism_only"
+        },
+        "sources": {
+          "permission_query": {
+            "aircraft_id": "SYNTH-A-00",
+            "applied": true
+          },
+          "registry": {
+            "aircraft_id": "SYNTH-A-00",
+            "registered": true
+          },
+          "rid": {
+            "aircraft_id": "SYNTH-A-00",
+            "altitude": 151,
+            "altitude_datum": "AGL",
+            "altitude_unit": "m"
+          }
+        }
+      },
+      "required_evidence": [
+        "registration_status",
+        "flight_permission",
+        "altitude"
+      ]
+    },
+    "original": "已实名登记。已提出飞行申请。最高高度151米。风险等级：LOW。"
+  },
+  {
+    "audit": {
+      "audit_depth": "L2",
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:registry:0:registered"
+          ],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:permission_query:0:applied"
+          ],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:rid:0:altitude"
+          ],
+          "text": "最高高度20米",
+          "value": 20
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "INSUFFICIENT",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "证据存在来源冲突，合成机制规则不能证明风险结论",
+          "supporting_evidence": [],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "final_decision": "MANUAL_REVIEW",
+      "issues": [
+        {
+          "claim_id": null,
+          "code_e": null,
+          "code_status": "pending_code_table",
+          "evidence_ids": [
+            "S:rid:0:aircraft_id",
+            "S:registry:0:aircraft_id",
+            "S:permission_query:0:aircraft_id"
+          ],
+          "issue_type": "EVIDENCE_CONFLICT",
+          "reason": "aircraft_id的独立来源不一致，未擅自挑选有利来源"
+        },
+        {
+          "claim_id": null,
+          "code_e": null,
+          "code_status": "pending_code_table",
+          "evidence_ids": [
+            "S:rid:0:altitude",
+            "S:rid:0:aircraft_id",
+            "S:rid:0:altitude_unit",
+            "S:rid:0:altitude_datum",
+            "S:registry:0:registered",
+            "S:registry:0:aircraft_id",
+            "S:permission_query:0:applied",
+            "S:permission_query:0:aircraft_id"
+          ],
+          "issue_type": "EVIDENCE_CONFLICT",
+          "reason": "证据航空器标识与事件主体不一致，不能合并为同一次飞行"
+        },
+        {
+          "claim_id": null,
+          "code_e": null,
+          "code_status": "pending_code_table",
+          "evidence_ids": [],
+          "issue_type": "INSUFFICIENT_EVIDENCE",
+          "reason": "证据存在来源冲突，合成机制规则不能证明风险结论"
+        }
+      ],
+      "missing_required": [],
+      "rationale": "存在未解问题，需人工复核",
+      "rule_hits": [
+        "R3"
+      ],
+      "rule_version_used": {
+        "audit_depth": "0.1.0",
+        "decision_gate": "0.7.1",
+        "fields": "0.2.0"
+      }
+    },
+    "candidate": {
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "最高高度20米",
+          "value": 20
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "UNKNOWN",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "event_summary": "合成机制候选；非实测研判",
+      "risk_level": "LOW",
+      "risk_reasons": [],
+      "status": "PASS",
+      "uncertainty": []
+    },
+    "case_id": "MECH-00-wrong_aircraft",
+    "input": {
+      "case_id": "MECH-00-wrong_aircraft",
+      "context": {
+        "aircraft_id": "SYNTH-A-00",
+        "event_time": "2026-10-11T10:00:00Z"
+      },
+      "empty_fields": [],
+      "event": {
+        "altitude": 20,
+        "behavior": "UNKNOWN",
+        "documents": "UNKNOWN",
+        "drone_identity": "UNKNOWN",
+        "event_id": "MECH-00-wrong_aircraft",
+        "event_time": "2026-10-11T10:00:00Z",
+        "images": "UNKNOWN",
+        "location": "UNKNOWN",
+        "metadata": "UNKNOWN",
+        "region_type": "UNKNOWN",
+        "registration_status": true,
+        "speed": "UNKNOWN",
+        "text_records": "",
+        "trajectory": "UNKNOWN",
+        "videos": "UNKNOWN"
+      },
+      "evidence": [
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude",
+          "field": "altitude",
+          "path": "raw_evidence.sources.rid.altitude",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": 20
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.rid.aircraft_id",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_unit",
+          "field": "altitude_unit",
+          "path": "raw_evidence.sources.rid.altitude_unit",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "m"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_datum",
+          "field": "altitude_datum",
+          "path": "raw_evidence.sources.rid.altitude_datum",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "AGL"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:registered",
+          "field": "registration_status",
+          "path": "raw_evidence.sources.registry.registered",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.registry.aircraft_id",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:applied",
+          "field": "flight_permission",
+          "path": "raw_evidence.sources.permission_query.applied",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.permission_query.aircraft_id",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00-OTHER"
+        }
+      ],
+      "existing_ai_output": null,
+      "is_constructed": true,
+      "missing_fields": [
+        "location",
+        "drone_identity",
+        "speed",
+        "trajectory",
+        "region_type",
+        "behavior",
+        "documents",
+        "images",
+        "videos",
+        "metadata"
+      ],
+      "raw_evidence": {
+        "research_policy": {
+          "altitude_datum": "AGL",
+          "altitude_unit": "m",
+          "policy_id": "mechanism-envelope-v1",
+          "rules": [
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "lte",
+                  "value": 100
+                }
+              ],
+              "risk_level": "LOW",
+              "rule_id": "low-envelope"
+            },
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "gt",
+                  "value": 100
+                }
+              ],
+              "risk_level": "HIGH",
+              "rule_id": "high-envelope"
+            }
+          ],
+          "scope": "synthetic_mechanism_only"
+        },
+        "sources": {
+          "permission_query": {
+            "aircraft_id": "SYNTH-A-00-OTHER",
+            "applied": true
+          },
+          "registry": {
+            "aircraft_id": "SYNTH-A-00",
+            "registered": true
+          },
+          "rid": {
+            "aircraft_id": "SYNTH-A-00",
+            "altitude": 20,
+            "altitude_datum": "AGL",
+            "altitude_unit": "m"
+          }
+        }
+      },
+      "required_evidence": [
+        "registration_status",
+        "flight_permission",
+        "altitude"
+      ]
+    },
+    "original": "已实名登记。已提出飞行申请。最高高度20米。风险等级：LOW。"
+  },
+  {
+    "audit": {
+      "audit_depth": "L2",
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:registry:0:registered"
+          ],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:permission_query:0:applied"
+          ],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "SUPPORTED",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "可定位字段支持该原子主张",
+          "supporting_evidence": [
+            "S:rid:0:altitude",
+            "S:radar:0:altitude"
+          ],
+          "text": "最高高度20米",
+          "value": 20
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "INSUFFICIENT",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "证据存在来源冲突，合成机制规则不能证明风险结论",
+          "supporting_evidence": [],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "final_decision": "MANUAL_REVIEW",
+      "issues": [
+        {
+          "claim_id": null,
+          "code_e": null,
+          "code_status": "pending_code_table",
+          "evidence_ids": [
+            "S:rid:0:altitude_datum",
+            "S:radar:0:altitude_datum"
+          ],
+          "issue_type": "EVIDENCE_CONFLICT",
+          "reason": "altitude_datum的独立来源不一致，未擅自挑选有利来源"
+        },
+        {
+          "claim_id": null,
+          "code_e": null,
+          "code_status": "pending_code_table",
+          "evidence_ids": [
+            "S:rid:0:altitude",
+            "S:rid:0:aircraft_id",
+            "S:rid:0:altitude_unit",
+            "S:rid:0:altitude_datum",
+            "S:radar:0:altitude",
+            "S:radar:0:aircraft_id",
+            "S:radar:0:altitude_unit",
+            "S:radar:0:altitude_datum"
+          ],
+          "issue_type": "INSUFFICIENT_EVIDENCE",
+          "reason": "高度基准不一致；真高、海拔高度等数值不能直接混合比较，需统一基准及转换依据"
+        },
+        {
+          "claim_id": null,
+          "code_e": null,
+          "code_status": "pending_code_table",
+          "evidence_ids": [],
+          "issue_type": "INSUFFICIENT_EVIDENCE",
+          "reason": "证据存在来源冲突，合成机制规则不能证明风险结论"
+        }
+      ],
+      "missing_required": [],
+      "rationale": "存在未解问题，需人工复核",
+      "rule_hits": [
+        "R3"
+      ],
+      "rule_version_used": {
+        "audit_depth": "0.1.0",
+        "decision_gate": "0.7.1",
+        "fields": "0.2.0"
+      }
+    },
+    "candidate": {
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "registration_status",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已实名登记",
+          "value": true
+        },
+        {
+          "claim_id": "c2",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "flight_permission",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "已提出飞行申请",
+          "value": true
+        },
+        {
+          "claim_id": "c3",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "altitude",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "最高高度20米",
+          "value": 20
+        },
+        {
+          "claim_id": "r1",
+          "claim_type": "conclusion",
+          "contradicting_evidence": [],
+          "depends_on": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "evidence_status": "UNKNOWN",
+          "field": "risk_level",
+          "operator": "eq",
+          "reason": "",
+          "supporting_evidence": [],
+          "text": "风险等级：LOW",
+          "value": "LOW"
+        }
+      ],
+      "event_summary": "合成机制候选；非实测研判",
+      "risk_level": "LOW",
+      "risk_reasons": [],
+      "status": "PASS",
+      "uncertainty": []
+    },
+    "case_id": "MECH-00-mixed_datum",
+    "input": {
+      "case_id": "MECH-00-mixed_datum",
+      "context": {
+        "aircraft_id": "SYNTH-A-00",
+        "event_time": "2026-10-11T10:00:00Z"
+      },
+      "empty_fields": [],
+      "event": {
+        "altitude": 20,
+        "behavior": "UNKNOWN",
+        "documents": "UNKNOWN",
+        "drone_identity": "UNKNOWN",
+        "event_id": "MECH-00-mixed_datum",
+        "event_time": "2026-10-11T10:00:00Z",
+        "images": "UNKNOWN",
+        "location": "UNKNOWN",
+        "metadata": "UNKNOWN",
+        "region_type": "UNKNOWN",
+        "registration_status": true,
+        "speed": "UNKNOWN",
+        "text_records": "",
+        "trajectory": "UNKNOWN",
+        "videos": "UNKNOWN"
+      },
+      "evidence": [
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude",
+          "field": "altitude",
+          "path": "raw_evidence.sources.rid.altitude",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": 20
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.rid.aircraft_id",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_unit",
+          "field": "altitude_unit",
+          "path": "raw_evidence.sources.rid.altitude_unit",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "m"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_datum",
+          "field": "altitude_datum",
+          "path": "raw_evidence.sources.rid.altitude_datum",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "AGL"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:registered",
+          "field": "registration_status",
+          "path": "raw_evidence.sources.registry.registered",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.registry.aircraft_id",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:applied",
+          "field": "flight_permission",
+          "path": "raw_evidence.sources.permission_query.applied",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.permission_query.aircraft_id",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:radar:0:altitude",
+          "field": "altitude",
+          "path": "raw_evidence.sources.radar.altitude",
+          "source": "radar",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": 20
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:radar:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.radar.aircraft_id",
+          "source": "radar",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:radar:0:altitude_unit",
+          "field": "altitude_unit",
+          "path": "raw_evidence.sources.radar.altitude_unit",
+          "source": "radar",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "m"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:radar:0:altitude_datum",
+          "field": "altitude_datum",
+          "path": "raw_evidence.sources.radar.altitude_datum",
+          "source": "radar",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "AMSL"
+        }
+      ],
+      "existing_ai_output": null,
+      "is_constructed": true,
+      "missing_fields": [
+        "location",
+        "drone_identity",
+        "speed",
+        "trajectory",
+        "region_type",
+        "behavior",
+        "documents",
+        "images",
+        "videos",
+        "metadata"
+      ],
+      "raw_evidence": {
+        "research_policy": {
+          "altitude_datum": "AGL",
+          "altitude_unit": "m",
+          "policy_id": "mechanism-envelope-v1",
+          "rules": [
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "lte",
+                  "value": 100
+                }
+              ],
+              "risk_level": "LOW",
+              "rule_id": "low-envelope"
+            },
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "gt",
+                  "value": 100
+                }
+              ],
+              "risk_level": "HIGH",
+              "rule_id": "high-envelope"
+            }
+          ],
+          "scope": "synthetic_mechanism_only"
+        },
+        "sources": {
+          "permission_query": {
+            "aircraft_id": "SYNTH-A-00",
+            "applied": true
+          },
+          "radar": {
+            "aircraft_id": "SYNTH-A-00",
+            "altitude": 20,
+            "altitude_datum": "AMSL",
+            "altitude_unit": "m"
+          },
+          "registry": {
+            "aircraft_id": "SYNTH-A-00",
+            "registered": true
+          },
+          "rid": {
+            "aircraft_id": "SYNTH-A-00",
+            "altitude": 20,
+            "altitude_datum": "AGL",
+            "altitude_unit": "m"
+          }
+        }
+      },
+      "required_evidence": [
+        "registration_status",
+        "flight_permission",
+        "altitude"
+      ]
+    },
+    "original": "已实名登记。已提出飞行申请。最高高度20米。风险等级：LOW。"
+  },
+  {
+    "audit": {
+      "audit_depth": "L2",
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "unmapped",
+          "operator": "unknown",
+          "reason": "未发现可映射的字段证据",
+          "supporting_evidence": [],
+          "text": "已实名登记，最高高度20米，无安全风险",
+          "value": null
+        }
+      ],
+      "final_decision": "MANUAL_REVIEW",
+      "issues": [
+        {
+          "claim_id": null,
+          "code_e": "E3",
+          "code_status": "mapped_per_resolution",
+          "evidence_ids": [
+            "S:registry:0:registered"
+          ],
+          "issue_type": "OMISSION",
+          "reason": "已提供的关键字段未在主张中覆盖：registration_status"
+        },
+        {
+          "claim_id": null,
+          "code_e": "E3",
+          "code_status": "mapped_per_resolution",
+          "evidence_ids": [
+            "S:permission_query:0:applied"
+          ],
+          "issue_type": "OMISSION",
+          "reason": "已提供的关键字段未在主张中覆盖：flight_permission"
+        },
+        {
+          "claim_id": null,
+          "code_e": "E3",
+          "code_status": "mapped_per_resolution",
+          "evidence_ids": [
+            "S:rid:0:altitude"
+          ],
+          "issue_type": "OMISSION",
+          "reason": "已提供的关键字段未在主张中覆盖：altitude"
+        }
+      ],
+      "missing_required": [],
+      "rationale": "存在未解问题，需人工复核；匹配合成机制规则 mechanism-envelope-v1；仅验证研究分级，不证明法规合法或真实场景安全",
+      "rule_hits": [
+        "R3",
+        "research:low-envelope"
+      ],
+      "rule_version_used": {
+        "audit_depth": "0.1.0",
+        "decision_gate": "0.7.1",
+        "fields": "0.2.0"
+      }
+    },
+    "candidate": {
+      "claims": [
+        {
+          "claim_id": "c1",
+          "claim_type": "fact",
+          "contradicting_evidence": [],
+          "depends_on": [],
+          "evidence_status": "UNKNOWN",
+          "field": "unmapped",
+          "operator": "unknown",
+          "reason": "复合主张含多个不同判断，尚未完整拆为可核验的原子主张",
+          "supporting_evidence": [],
+          "text": "已实名登记，最高高度20米，无安全风险",
+          "value": null
+        }
+      ],
+      "event_summary": "合成机制候选；非实测研判",
+      "risk_level": "LOW",
+      "risk_reasons": [],
+      "status": "PASS",
+      "uncertainty": []
+    },
+    "case_id": "MECH-00-compound",
+    "input": {
+      "case_id": "MECH-00-compound",
+      "context": {
+        "aircraft_id": "SYNTH-A-00",
+        "event_time": "2026-10-11T10:00:00Z"
+      },
+      "empty_fields": [],
+      "event": {
+        "altitude": 20,
+        "behavior": "UNKNOWN",
+        "documents": "UNKNOWN",
+        "drone_identity": "UNKNOWN",
+        "event_id": "MECH-00-compound",
+        "event_time": "2026-10-11T10:00:00Z",
+        "images": "UNKNOWN",
+        "location": "UNKNOWN",
+        "metadata": "UNKNOWN",
+        "region_type": "UNKNOWN",
+        "registration_status": true,
+        "speed": "UNKNOWN",
+        "text_records": "",
+        "trajectory": "UNKNOWN",
+        "videos": "UNKNOWN"
+      },
+      "evidence": [
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude",
+          "field": "altitude",
+          "path": "raw_evidence.sources.rid.altitude",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": 20
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.rid.aircraft_id",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_unit",
+          "field": "altitude_unit",
+          "path": "raw_evidence.sources.rid.altitude_unit",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "m"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:rid:0:altitude_datum",
+          "field": "altitude_datum",
+          "path": "raw_evidence.sources.rid.altitude_datum",
+          "source": "rid",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "AGL"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:registered",
+          "field": "registration_status",
+          "path": "raw_evidence.sources.registry.registered",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:registry:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.registry.aircraft_id",
+          "source": "registry",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:applied",
+          "field": "flight_permission",
+          "path": "raw_evidence.sources.permission_query.applied",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": true
+        },
+        {
+          "confidence": "high",
+          "constructed": true,
+          "evidence_id": "S:permission_query:0:aircraft_id",
+          "field": "aircraft_id",
+          "path": "raw_evidence.sources.permission_query.aircraft_id",
+          "source": "permission_query",
+          "source_type": "constructed",
+          "timestamp": null,
+          "value": "SYNTH-A-00"
+        }
+      ],
+      "existing_ai_output": null,
+      "is_constructed": true,
+      "missing_fields": [
+        "location",
+        "drone_identity",
+        "speed",
+        "trajectory",
+        "region_type",
+        "behavior",
+        "documents",
+        "images",
+        "videos",
+        "metadata"
+      ],
+      "raw_evidence": {
+        "research_policy": {
+          "altitude_datum": "AGL",
+          "altitude_unit": "m",
+          "policy_id": "mechanism-envelope-v1",
+          "rules": [
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "lte",
+                  "value": 100
+                }
+              ],
+              "risk_level": "LOW",
+              "rule_id": "low-envelope"
+            },
+            {
+              "all": [
+                {
+                  "field": "registration_status",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "flight_permission",
+                  "operator": "eq",
+                  "value": true
+                },
+                {
+                  "field": "altitude",
+                  "operator": "gt",
+                  "value": 100
+                }
+              ],
+              "risk_level": "HIGH",
+              "rule_id": "high-envelope"
+            }
+          ],
+          "scope": "synthetic_mechanism_only"
+        },
+        "sources": {
+          "permission_query": {
+            "aircraft_id": "SYNTH-A-00",
+            "applied": true
+          },
+          "registry": {
+            "aircraft_id": "SYNTH-A-00",
+            "registered": true
+          },
+          "rid": {
+            "aircraft_id": "SYNTH-A-00",
+            "altitude": 20,
+            "altitude_datum": "AGL",
+            "altitude_unit": "m"
+          }
+        }
+      },
+      "required_evidence": [
+        "registration_status",
+        "flight_permission",
+        "altitude"
+      ]
+    },
+    "original": "已实名登记，最高高度20米，无安全风险。"
+  }
+]

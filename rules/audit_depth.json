@@ -1,0 +1,9 @@
+{
+  "version": "0.1.0", "match_order": ["L3", "L2", "L1", "L0"], "default_level": "L2",
+  "levels": {
+    "L3": {"condition": "high_and_unresolved", "description": "高风险且存在缺失或未解冲突"},
+    "L2": {"condition": "high_or_unresolved", "description": "高风险或存在需深入核查的问题"},
+    "L1": {"condition": "medium", "description": "中风险且完整，关键主张检查"},
+    "L0": {"condition": "low_complete", "description": "低风险、证据完整、无问题"}
+  }
+}

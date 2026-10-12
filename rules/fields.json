@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "boolean_values": {
+    "registration_status": {"已完成实名登记": true, "已实名登记": true, "已登记": true, "未实名登记": false, "未登记": false, "true": true, "false": false},
+    "flight_permission": {"已申请": true, "未申请": false, "true": true, "false": false},
+    "firmware_status": {"true": true, "false": false},
+    "geofence_violation": {"true": true, "false": false}
+  },
+  "aliases": {
+    "altitude": ["altitude", "alt_true_m", "true_altitude", "altitude_agl", "max_height", "max_alt_m", "altitude_m", "flight_trajectory_max_altitude"],
+    "region_type": ["region_type", "zone_type", "airspace_zone_type"],
+    "registration_status": ["registered", "registration_status"],
+    "flight_permission": ["flight_permission", "applied"],
+    "firmware_status": ["firmware_status", "modified"],
+    "flight_time": ["flight_time", "event_time", "ts"],
+    "approach_path": ["approach_path", "crossing"],
+    "flight_schedule_overlap": ["flight_schedule_overlap", "overlap"],
+    "geofence_violation": ["geofence_violation", "violation"],
+    "target_type": ["target_type"],
+    "image_disposition": ["image_disposition", "uploaded"],
+    "aircraft_class": ["aircraft_class"],
+    "payload_evidence": ["payload_evidence", "payload_query"],
+    "notam_window": ["notam_window", "notam"],
+    "flight_trajectory": ["flight_trajectory", "rid_trajectory"]
+  },
+  "event_fields": ["event_id", "event_time", "location", "drone_identity", "registration_status", "altitude", "speed", "trajectory", "region_type", "behavior", "text_records", "documents", "images", "videos", "metadata"]
+}

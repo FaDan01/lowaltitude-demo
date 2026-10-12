@@ -1,0 +1,1267 @@
+{
+  "cases": 420,
+  "dataset_sha256": "1b4c90ce9eb837d8b583cb320bf3d16baec029891702cfa8f88cd1cbb5d3cff0",
+  "decision_counts": {
+    "MANUAL_REVIEW": 240,
+    "PASS": 150,
+    "WARNING": 30
+  },
+  "expert_validated": false,
+  "families": 30,
+  "implementation_sha256": "ab04cd8095774ddad98a5fbbb49c8e8b082e83bd7459b9caf8ef99595ebb4876",
+  "kind": "synthetic_mechanism_challenge_v1",
+  "limits": [
+    "同一生成模板的参数化场景组，不能证明跨数据分布泛化或统计安全保证",
+    "规则与挑战类型共同设计，属白盒机制验证；仍需盲测和专家独立标注",
+    "对照没有真实模型自审，也未证明同覆盖率下优于其他方法",
+    "自动采用仅指辅助报告展示，不是飞行许可或自动执法"
+  ],
+  "metrics": {
+    "dev": {
+      "all_manual": {
+        "accepted": 0,
+        "accepted_errors": 0,
+        "automatic_coverage": 0.0,
+        "clean_retention": 0.0,
+        "error_candidates": 96,
+        "error_release_rate": 0.0,
+        "n": 168,
+        "selective_error_rate": null
+      },
+      "direct": {
+        "accepted": 168,
+        "accepted_errors": 96,
+        "automatic_coverage": 1.0,
+        "clean_retention": 1.0,
+        "error_candidates": 96,
+        "error_release_rate": 1.0,
+        "n": 168,
+        "selective_error_rate": 0.5714285714285714
+      },
+      "fields_only": {
+        "accepted": 120,
+        "accepted_errors": 48,
+        "automatic_coverage": 0.7142857142857143,
+        "clean_retention": 1.0,
+        "error_candidates": 96,
+        "error_release_rate": 0.5,
+        "n": 168,
+        "selective_error_rate": 0.4
+      },
+      "full": {
+        "accepted": 72,
+        "accepted_errors": 0,
+        "automatic_coverage": 0.42857142857142855,
+        "clean_retention": 1.0,
+        "error_candidates": 96,
+        "error_release_rate": 0.0,
+        "n": 168,
+        "selective_error_rate": 0.0
+      }
+    },
+    "test": {
+      "all_manual": {
+        "accepted": 0,
+        "accepted_errors": 0,
+        "automatic_coverage": 0.0,
+        "clean_retention": 0.0,
+        "error_candidates": 144,
+        "error_release_rate": 0.0,
+        "n": 252,
+        "selective_error_rate": null
+      },
+      "direct": {
+        "accepted": 252,
+        "accepted_errors": 144,
+        "automatic_coverage": 1.0,
+        "clean_retention": 1.0,
+        "error_candidates": 144,
+        "error_release_rate": 1.0,
+        "n": 252,
+        "selective_error_rate": 0.5714285714285714
+      },
+      "fields_only": {
+        "accepted": 180,
+        "accepted_errors": 72,
+        "automatic_coverage": 0.7142857142857143,
+        "clean_retention": 1.0,
+        "error_candidates": 144,
+        "error_release_rate": 0.5,
+        "n": 252,
+        "selective_error_rate": 0.4
+      },
+      "full": {
+        "accepted": 108,
+        "accepted_errors": 0,
+        "automatic_coverage": 0.42857142857142855,
+        "clean_retention": 1.0,
+        "error_candidates": 144,
+        "error_release_rate": 0.0,
+        "n": 252,
+        "selective_error_rate": 0.0
+      }
+    }
+  },
+  "model_calls": 0,
+  "normal_fraction": 0.42857142857142855,
+  "policy_note": "100米仅为合成研究阈值，不能当作法规或真实风险规则",
+  "property_checks": {
+    "passed": 180,
+    "rows": [
+      {
+        "family": "FAMILY-00",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-00",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-00",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-00",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-00",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-00",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-01",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-01",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-01",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-01",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-01",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-01",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-02",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-02",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-02",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-02",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-02",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-02",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-03",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-03",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-03",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-03",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-03",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-03",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-04",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-04",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-04",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-04",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-04",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-04",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-05",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-05",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-05",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-05",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-05",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-05",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-06",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-06",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-06",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-06",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-06",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-06",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-07",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-07",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-07",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-07",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-07",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-07",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-08",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-08",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-08",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-08",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-08",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-08",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-09",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-09",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-09",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-09",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-09",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-09",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-10",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-10",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-10",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-10",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-10",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-10",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-11",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-11",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-11",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-11",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-11",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-11",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-12",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-12",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-12",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-12",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-12",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-12",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-13",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-13",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-13",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-13",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-13",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-13",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-14",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-14",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-14",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-14",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-14",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-14",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-15",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-15",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-15",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-15",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-15",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-15",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-16",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-16",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-16",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-16",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-16",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-16",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-17",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-17",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-17",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-17",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-17",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-17",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-18",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-18",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-18",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-18",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-18",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-18",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-19",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-19",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-19",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-19",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-19",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-19",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-20",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-20",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-20",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-20",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-20",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-20",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-21",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-21",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-21",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-21",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-21",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-21",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-22",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-22",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-22",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-22",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-22",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-22",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-23",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-23",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-23",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-23",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-23",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-23",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-24",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-24",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-24",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-24",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-24",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-24",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-25",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-25",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-25",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-25",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-25",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-25",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-26",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-26",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-26",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-26",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-26",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-26",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-27",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-27",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-27",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-27",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-27",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-27",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-28",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-28",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-28",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-28",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-28",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-28",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      },
+      {
+        "family": "FAMILY-29",
+        "passed": true,
+        "property": "wording_invariance"
+      },
+      {
+        "family": "FAMILY-29",
+        "passed": true,
+        "property": "order_invariance"
+      },
+      {
+        "family": "FAMILY-29",
+        "passed": true,
+        "property": "irrelevant_evidence_invariance"
+      },
+      {
+        "family": "FAMILY-29",
+        "passed": true,
+        "property": "missing_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-29",
+        "passed": true,
+        "property": "conflict_cannot_increase_adoption"
+      },
+      {
+        "family": "FAMILY-29",
+        "passed": true,
+        "property": "repair_restores_bounded_adoption"
+      }
+    ],
+    "total": 180
+  },
+  "public_subset": {
+    "cases": 14,
+    "family": "MECH-00",
+    "note": "本包仅携带十四条现场示例；上述汇总仍来自原完整机制验证，不是用这十四条重算。"
+  },
+  "replay_sha256": "7ef375a35617a0dc99ca9df1b844462d98533b734796a0a1706f32532126ca09",
+  "rules": {
+    "audit_depth": {
+      "default_level": "L2",
+      "levels": {
+        "L0": {
+          "condition": "low_complete",
+          "description": "低风险、证据完整、无问题"
+        },
+        "L1": {
+          "condition": "medium",
+          "description": "中风险且完整，关键主张检查"
+        },
+        "L2": {
+          "condition": "high_or_unresolved",
+          "description": "高风险或存在需深入核查的问题"
+        },
+        "L3": {
+          "condition": "high_and_unresolved",
+          "description": "高风险且存在缺失或未解冲突"
+        }
+      },
+      "match_order": [
+        "L3",
+        "L2",
+        "L1",
+        "L0"
+      ],
+      "version": "0.1.0"
+    },
+    "decision_gate": {
+      "actions": {
+        "R1": "PASS",
+        "R2": "WARNING",
+        "R3": "MANUAL_REVIEW",
+        "R4": "BLOCK"
+      },
+      "authority": "V1.3 R1-R4 + 开工阻塞解决决议；风险支撑须有可执行规则，仅研究原型，不作执法判断",
+      "authority_patterns": [
+        "(?:建议|应当|决定|处以|予以).{0,20}(?:罚款|拘留|立案|处罚)",
+        "判处",
+        "构成犯罪"
+      ],
+      "authority_text": {
+        "context_window_chars": 120,
+        "patterns": {
+          "ambiguity": "可能|疑似|涉嫌|是否|未必|不一定|不能排除|无法排除|尚待|待核查|待核实|有待|如果|若|一旦|如经|如查|尚需|建议(?:核查|调查|核实)",
+          "directive": "处以|予以|给予|从重|从轻|执行|实施",
+          "double_negative": "(?:不是|并非|不能说|不代表|不意味着).{0,12}(?:不|未|没有|无)",
+          "historical": "(?:公安机关|公安|警方|执法机关|法院|人民法院|当事人|操作人|该人|该案).{0,20}(?:已(?:经)?|曾(?:经)?|此前|先前|去年)(?:对.{0,12})?(?:处以|予以|判处|决定(?:给予|予以)?|作出|给予|建议(?:处以|给予|予以)?|被)?$|(?:已被|曾被)(?:处以|予以|判处)?$|已经受到$",
+          "negation": "不建议|不应(?:当|该)?|不得|不能|无法|尚不能|不宜|无需|无须|不予|不作|不会|禁止|不构成|未作出|未决定|没有证据(?:证明)?",
+          "recommendation": "建议|应当|应该|拟(?:作出)?|决定|作出",
+          "reported_quote": "据报道|报道(?:称|指出|提到|记载)|通报(?:显示|称|记载|原文)|原文(?:记载|引文)?[：:]|历史记录(?:记载|显示)|引用[：:]",
+          "scope_reset": "[，,]|但是|然而|不过|而是|但",
+          "sentence_boundary": "[。！？!?；;]",
+          "technical_warning": "(?:系统|设备|软件|界面|安全模块|监测模块).{0,12}(?:发出|显示|弹出|触发)",
+          "term": "构成犯罪|判处|罚款|(?:行政|刑事)?拘留|立案(?:侦查)?|处罚|警告",
+          "uncertain_suffix": "(?:的)?(?:判断|认定|结论|说法)?(?:尚|暂)?(?:无依据|缺乏依据|证据不足|待核实|待核查)"
+        },
+        "policy": "bounded_chinese_action_context_v1"
+      },
+      "confirmed_code_mapping": {
+        "BIASED_OUTPUT": "E2",
+        "FACTUAL_ERROR": "E4",
+        "HIGH_RISK_NOT_ESCALATED": "E1",
+        "OMISSION": "E3"
+      },
+      "issue_types": [
+        "FACTUAL_ERROR",
+        "INSUFFICIENT_EVIDENCE",
+        "OVER_INFERENCE",
+        "RULE_MISMATCH",
+        "HIGH_RISK_NOT_ESCALATED",
+        "EXCEEDS_AUTHORITY",
+        "EVIDENCE_CONFLICT",
+        "TIMELINESS_ERROR",
+        "BIASED_OUTPUT",
+        "UNKNOWN_AS_NEGATION",
+        "OMISSION",
+        "SELECTIVE_EVIDENCE"
+      ],
+      "priority": [
+        "R4",
+        "R3",
+        "R2",
+        "R1"
+      ],
+      "public_report_pass": false,
+      "risk_levels": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "CRITICAL",
+        "UNKNOWN"
+      ],
+      "version": "0.7.1"
+    },
+    "fields": {
+      "aliases": {
+        "aircraft_class": [
+          "aircraft_class"
+        ],
+        "altitude": [
+          "altitude",
+          "alt_true_m",
+          "true_altitude",
+          "altitude_agl",
+          "max_height",
+          "max_alt_m",
+          "altitude_m",
+          "flight_trajectory_max_altitude"
+        ],
+        "approach_path": [
+          "approach_path",
+          "crossing"
+        ],
+        "firmware_status": [
+          "firmware_status",
+          "modified"
+        ],
+        "flight_permission": [
+          "flight_permission",
+          "applied"
+        ],
+        "flight_schedule_overlap": [
+          "flight_schedule_overlap",
+          "overlap"
+        ],
+        "flight_time": [
+          "flight_time",
+          "event_time",
+          "ts"
+        ],
+        "flight_trajectory": [
+          "flight_trajectory",
+          "rid_trajectory"
+        ],
+        "geofence_violation": [
+          "geofence_violation",
+          "violation"
+        ],
+        "image_disposition": [
+          "image_disposition",
+          "uploaded"
+        ],
+        "notam_window": [
+          "notam_window",
+          "notam"
+        ],
+        "payload_evidence": [
+          "payload_evidence",
+          "payload_query"
+        ],
+        "region_type": [
+          "region_type",
+          "zone_type",
+          "airspace_zone_type"
+        ],
+        "registration_status": [
+          "registered",
+          "registration_status"
+        ],
+        "target_type": [
+          "target_type"
+        ]
+      },
+      "boolean_values": {
+        "firmware_status": {
+          "false": false,
+          "true": true
+        },
+        "flight_permission": {
+          "false": false,
+          "true": true,
+          "已申请": true,
+          "未申请": false
+        },
+        "geofence_violation": {
+          "false": false,
+          "true": true
+        },
+        "registration_status": {
+          "false": false,
+          "true": true,
+          "已完成实名登记": true,
+          "已实名登记": true,
+          "已登记": true,
+          "未实名登记": false,
+          "未登记": false
+        }
+      },
+      "event_fields": [
+        "event_id",
+        "event_time",
+        "location",
+        "drone_identity",
+        "registration_status",
+        "altitude",
+        "speed",
+        "trajectory",
+        "region_type",
+        "behavior",
+        "text_records",
+        "documents",
+        "images",
+        "videos",
+        "metadata"
+      ],
+      "version": "0.2.0"
+    }
+  },
+  "scope": "固定结构化候选的机制验证；不评价模型生成和自然语言抽取精度",
+  "split_families": {
+    "dev": [
+      "FAMILY-00",
+      "FAMILY-04",
+      "FAMILY-06",
+      "FAMILY-07",
+      "FAMILY-09",
+      "FAMILY-11",
+      "FAMILY-12",
+      "FAMILY-13",
+      "FAMILY-17",
+      "FAMILY-20",
+      "FAMILY-25",
+      "FAMILY-28"
+    ],
+    "test": [
+      "FAMILY-01",
+      "FAMILY-02",
+      "FAMILY-03",
+      "FAMILY-05",
+      "FAMILY-08",
+      "FAMILY-10",
+      "FAMILY-14",
+      "FAMILY-15",
+      "FAMILY-16",
+      "FAMILY-18",
+      "FAMILY-19",
+      "FAMILY-21",
+      "FAMILY-22",
+      "FAMILY-23",
+      "FAMILY-24",
+      "FAMILY-26",
+      "FAMILY-27",
+      "FAMILY-29"
+    ]
+  }
+}

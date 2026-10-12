@@ -1,0 +1,52 @@
+{
+  "case_ids": [
+    "MECH-00-clean_low",
+    "MECH-00-clean_high",
+    "MECH-00-wording",
+    "MECH-00-reordered",
+    "MECH-00-irrelevant",
+    "MECH-00-zero_altitude",
+    "MECH-00-fact_error",
+    "MECH-00-omission",
+    "MECH-00-missing",
+    "MECH-00-conflict",
+    "MECH-00-risk_underestimate",
+    "MECH-00-wrong_aircraft",
+    "MECH-00-mixed_datum",
+    "MECH-00-compound"
+  ],
+  "expert_validated": false,
+  "files": [
+    {
+      "path": "replay.json",
+      "sha256": "aabbfa667be4ddee960d3660b7c4d2140f6b519a85f51d07553bbdf88f5bf145",
+      "size": 152731
+    },
+    {
+      "path": "summary.json",
+      "sha256": "9c8c9933c3ecc5504e24add807ef6ce9b2d5d9e6a153255aa2ecef8c365809c0",
+      "size": 32747
+    }
+  ],
+  "model_calls": 0,
+  "note": "仅导出既有合成回放；打包过程未调用模型、未重跑实验。",
+  "public_cases": 14,
+  "replay_sha256": "27b9f3e161b6afd05a21d8c7b2eb20f59743cad894f7d4b3c9593d9b2fc6197c",
+  "rules_sha256": {
+    "audit_depth": "9a6499c0b7202e8f2eb1bd3e04de11183e432b3359852fdc7cb97bb51f5d35ec",
+    "decision_gate": "fe417e7e3fd7f794de258101fc2821fc5ee6bb3556ff5a25f8d343f841bf8219",
+    "fields": "d71d435e1cd0bfeb6f1352bdc0212b6b5ee7a787563e8e033d028664c452409a"
+  },
+  "rules_versions": {
+    "audit_depth": "0.1.0",
+    "decision_gate": "0.7.1",
+    "fields": "0.2.0"
+  },
+  "schema": "public_demo_subset/v1",
+  "scope": "synthetic_mechanism_only",
+  "source_cases": 420,
+  "source_implementation_sha256": "ab04cd8095774ddad98a5fbbb49c8e8b082e83bd7459b9caf8ef99595ebb4876",
+  "source_kind": "synthetic_mechanism_challenge_v1",
+  "source_replay_sha256": "7ef375a35617a0dc99ca9df1b844462d98533b734796a0a1706f32532126ca09",
+  "source_summary_sha256": "ec7be3fda8783de05d766ee1223d128d17dd19e651a6b83c3dd0162df6143bc9"
+}
